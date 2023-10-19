@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <AddUser onDataAdded={receivedData} />
-      <UsersList users={usersList}/>
+      <UsersList users={usersList} />
     </div>
   )
 }
