@@ -1,0 +1,13 @@
+.list {
+  background-color: aliceblue;
+  color: #000;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.items {
+  list-style: none;
+  font-size: 18px;
+  padding: 5px;
+  
+}
