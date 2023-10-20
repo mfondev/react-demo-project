@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import ErrorModal from './Components/ErrorModal'
-import classes from "./Components/AddUser.module.css"
-
+import classes from './Components/AddUser.module.css'
 
 const AddUsers = (props) => {
   const [input1, setInput1] = useState('')
   const [input2, setInput2] = useState('')
   const [input3, setInput3] = useState('')
   const [input4, setInput4] = useState('')
-  const [error,setError] = useState("")
+  const [error, setError] = useState('')
 
   const onInputHandler = (identifier, value) => {
     if (identifier === 'username') {
@@ -28,22 +27,22 @@ const AddUsers = (props) => {
     if (
       input1.trim().length === 0 ||
       input2.trim().length === 0 ||
-      input3.trim().length === 0 ||
-      input4.trim().length === 0
+      input3.trim().length === 0
+      // input4.trim().length === 0
     ) {
       setError({
         title: 'Invalid Input',
         message: 'Please input the right details',
       })
-      return 
+      return
     }
-      if (+input2 < 1 || +input2 > 47) {
-        setError({
-          title: 'Invalid age',
-          message: 'Please enter a valid age > 1 and < 47 .',
-        })
-        return
-      }
+    if (+input2 < 1 || +input2 > 47) {
+      setError({
+        title: 'Invalid age',
+        message: 'Please enter a valid age > 1 and < 47 .',
+      })
+      return
+    }
     const inputedData = {
       username: input1,
       age: input2,
@@ -57,12 +56,9 @@ const AddUsers = (props) => {
     setInput4('')
   }
 
- 
   const errorHandler = () => {
     setError(null)
   }
-
-
 
   return (
     <div>
